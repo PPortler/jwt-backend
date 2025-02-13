@@ -19,7 +19,7 @@ userRouter.route("/register").post(async (req, res) => {
         const checkUser = await Users.findOne({ email });
 
         if (checkUser) {
-            return res.status(409).send("User already exits. Please login");
+             return res.status(409).send("User already exits. Please login");
         }
         encryptedPassword = await bcrypt.hash(password, 10)
 
